@@ -1,10 +1,12 @@
+
 const block = document.getElementsByClassName('reveal');
 
 let isInViewPort = function(element) {
     const viewPortHeight = window.innerHeight;
     const elementTop = element.getBoundingClientRect().top;
+    const elementBottom = element.getBoundingClientRect().bottom;
 
-    if (elementTop < 0 && elementTop > viewPortHeight) {
+    if (elementBottom < 0 || elementTop > viewPortHeight) {
         return false;
     } else {
         return true;
