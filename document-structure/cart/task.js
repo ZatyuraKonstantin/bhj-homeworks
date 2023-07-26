@@ -20,7 +20,9 @@ products.forEach((product) => {
         };
 
         productAdd.onclick = () => {
-            cartAdd(product);
+            if (productValue.textContent > 0) {
+                cartAdd(product);
+            }
         }
 
 });
